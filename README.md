@@ -2,7 +2,7 @@
 
 ##Overview
 > This week students will build a Twitter client application. This project  gets students comfortable with building out their first fully-functioning application utilizing the tools learned in the previous week as well as specific features learned each day throughout this week. More specifically, students will use the Accounts and Social frameworks to authenticate users, make GET requests to the Twitter API, parse JSON, and use the data to build model objects and display content to the user.
-↑
+
 ##Learning Objectives
 > Utilizing storyboards, students will understand the basics of the developing an app from start to finish using the Swift Programming language.
 Students will have a clear understanding of MVC
