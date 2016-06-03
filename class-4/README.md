@@ -9,10 +9,11 @@
 * Convert your table view cells to use a Nib, so you can share the same cell for both the home time line VC and the user Timeline VC.
 
 ###Reading Assignment:
-* [UITableViewDelegate](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDelegate_Protocol/index.html)
-* [Image Assets](https://developer.apple.com/library/prerelease/ios/documentation/Xcode/Reference/xcode_ref-Asset_Catalog_Format/)
-* [UINibs](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UINib_Ref/index.html)
-* Queue - Read up on Queue's as a data structure.(Not NSOperationQueue)
+* Apple Documentation:
+	* [UITableViewDelegate](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDelegate_Protocol/index.html)
+	* [Image Assets](https://developer.apple.com/library/prerelease/ios/documentation/Xcode/Reference/xcode_ref-Asset_Catalog_Format/)
+	* [UINibs](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UINib_Ref/index.html)
+
 
 ##Other Resources
 * [Reading Assignments](../../Resources/ra-grading-standard/)

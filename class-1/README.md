@@ -6,18 +6,18 @@
 * Create your TweetJSONParser class
 * Add text & id properties to your Tweet class
 * Add properties for the username, and profileImageURL(all string types) to your User class
-* Parse the json file into tweets, make sure all properties on each tweet are being set. All parsing should be done in your TweetJSONParser class.
+* Parse the JSON file into tweets, make sure all properties on each tweet are being set. All parsing should be done in your TweetJSONParser class.
 * Display those tweet objects in the table view, just the text for the tweet is fine today
 * **Code Challenge:**
 	* Write a function that reverses an array
 
 ###Reading Assignment:
-* Model-View-Ccontroller (read up on the concept)
-* NSJSONSerialization
-* NSBundle
-* UITableView
-
->For the Readings, please utlize the Apple Docs, but read up on these topics in general to get a good understanding of them.
+* General Concepts:
+  * MVC
+* Apple Documentation:
+  * NSJSONSerialization
+  * NSBundle
+  * UITableView
 
 ##Other Resources
 * [Reading Assignments](../../Resources/ra-grading-standard/)
