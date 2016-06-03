@@ -10,11 +10,11 @@ Students will be able to parse JSON returned from the Twitter API
 Students will have the skills needed to utilize the Accounts and Social frameworks
 
 ##Daily Breakdown
-#####[Class 1:](class-1) MVC, Classes, Structs, JSON  
-#####[Class 2:](class-2) Accounts and Social Frameworks, HTTP Status Codes, Switch Statements, MainQueue
-#####[Class 3:](class-3) Autolayout, Passing Information between ViewControllers, Navigation Controller
-#####[Class 4:](class-4) Lazy Properties, Additional API Endpoints, Nibs/Xibs
-#####[Class 5:](class-5) Data Structures and Whiteboarding
+* [Class 1:](class-1) MVC, Classes, Structs, JSON  
+* [Class 2:](class-2) Accounts and Social Frameworks, HTTP Status Codes, Switch Statements, MainQueue
+* [Class 3:](class-3) Autolayout, Passing Information between ViewControllers, Navigation Controller
+* [Class 4:](class-4) Lazy Properties, Additional API Endpoints, Nibs/Xibs
+* [Class 5:](class-5) Data Structures and Whiteboarding
 
 ##[Other Resources:](Resources/)
 * [Homework Grading Standard](Resources/hw-grading-standard/)
