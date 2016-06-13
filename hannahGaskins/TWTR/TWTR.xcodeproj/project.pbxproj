@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE90B8C31D0F534E005F4610 /* tweet.json in Resources */ = {isa = PBXBuildFile; fileRef = EE90B8C21D0F534E005F4610 /* tweet.json */; };
+		EE90B8C71D0F5427005F4610 /* tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE90B8C61D0F5427005F4610 /* tweet.swift */; };
+		EE90B8C91D0F5433005F4610 /* user.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE90B8C81D0F5433005F4610 /* user.swift */; };
+		EE90B8CD1D0F55F7005F4610 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE90B8CC1D0F55F7005F4610 /* JSONParser.swift */; };
 		EEB88BE51D0F511600BB7838 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB88BE41D0F511600BB7838 /* AppDelegate.swift */; };
 		EEB88BE71D0F511600BB7838 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB88BE61D0F511600BB7838 /* ViewController.swift */; };
 		EEB88BEA1D0F511600BB7838 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEB88BE81D0F511600BB7838 /* Main.storyboard */; };
@@ -15,6 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EE90B8C21D0F534E005F4610 /* tweet.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tweet.json; sourceTree = "<group>"; };
+		EE90B8C61D0F5427005F4610 /* tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tweet.swift; sourceTree = "<group>"; };
+		EE90B8C81D0F5433005F4610 /* user.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = user.swift; sourceTree = "<group>"; };
+		EE90B8CC1D0F55F7005F4610 /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		EEB88BE11D0F511600BB7838 /* TWTR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TWTR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEB88BE41D0F511600BB7838 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEB88BE61D0F511600BB7838 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +43,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EE90B8C11D0F531F005F4610 /* App Global */ = {
+			isa = PBXGroup;
+			children = (
+				EEB88BE41D0F511600BB7838 /* AppDelegate.swift */,
+				EEB88BF01D0F511600BB7838 /* Info.plist */,
+				EE90B8C21D0F534E005F4610 /* tweet.json */,
+			);
+			name = "App Global";
+			sourceTree = "<group>";
+		};
+		EE90B8C41D0F538A005F4610 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EEB88BE61D0F511600BB7838 /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		EE90B8C51D0F53CD005F4610 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EE90B8C61D0F5427005F4610 /* tweet.swift */,
+				EE90B8C81D0F5433005F4610 /* user.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		EE90B8CA1D0F554F005F4610 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EEB88BEB1D0F511600BB7838 /* Assets.xcassets */,
+				EEB88BED1D0F511600BB7838 /* LaunchScreen.storyboard */,
+				EEB88BE81D0F511600BB7838 /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		EE90B8CB1D0F55BE005F4610 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				EE90B8CC1D0F55F7005F4610 /* JSONParser.swift */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
 		EEB88BD81D0F511600BB7838 = {
 			isa = PBXGroup;
 			children = (
@@ -54,12 +107,11 @@
 		EEB88BE31D0F511600BB7838 /* TWTR */ = {
 			isa = PBXGroup;
 			children = (
-				EEB88BE41D0F511600BB7838 /* AppDelegate.swift */,
-				EEB88BE61D0F511600BB7838 /* ViewController.swift */,
-				EEB88BE81D0F511600BB7838 /* Main.storyboard */,
-				EEB88BEB1D0F511600BB7838 /* Assets.xcassets */,
-				EEB88BED1D0F511600BB7838 /* LaunchScreen.storyboard */,
-				EEB88BF01D0F511600BB7838 /* Info.plist */,
+				EE90B8C11D0F531F005F4610 /* App Global */,
+				EE90B8C41D0F538A005F4610 /* Controller */,
+				EE90B8C51D0F53CD005F4610 /* Model */,
+				EE90B8CA1D0F554F005F4610 /* View */,
+				EE90B8CB1D0F55BE005F4610 /* Utility */,
 			);
 			path = TWTR;
 			sourceTree = "<group>";
@@ -125,6 +177,7 @@
 				EEB88BEF1D0F511600BB7838 /* LaunchScreen.storyboard in Resources */,
 				EEB88BEC1D0F511600BB7838 /* Assets.xcassets in Resources */,
 				EEB88BEA1D0F511600BB7838 /* Main.storyboard in Resources */,
+				EE90B8C31D0F534E005F4610 /* tweet.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,7 +188,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE90B8C91D0F5433005F4610 /* user.swift in Sources */,
+				EE90B8CD1D0F55F7005F4610 /* JSONParser.swift in Sources */,
 				EEB88BE71D0F511600BB7838 /* ViewController.swift in Sources */,
+				EE90B8C71D0F5427005F4610 /* tweet.swift in Sources */,
 				EEB88BE51D0F511600BB7838 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,6 +344,7 @@
 				EEB88BF51D0F511600BB7838 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
