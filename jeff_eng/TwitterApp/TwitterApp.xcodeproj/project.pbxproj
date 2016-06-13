@@ -12,6 +12,7 @@
 		95FD18851D0F4CF500156FB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95FD18831D0F4CF500156FB5 /* Main.storyboard */; };
 		95FD18871D0F4CF500156FB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95FD18861D0F4CF500156FB5 /* Assets.xcassets */; };
 		95FD188A1D0F4CF500156FB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95FD18881D0F4CF500156FB5 /* LaunchScreen.storyboard */; };
+		95FD18931D0F52F300156FB5 /* tweet.json in Resources */ = {isa = PBXBuildFile; fileRef = 95FD18921D0F52F300156FB5 /* tweet.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		95FD18861D0F4CF500156FB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95FD18891D0F4CF500156FB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		95FD188B1D0F4CF500156FB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95FD18921D0F52F300156FB5 /* tweet.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tweet.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,23 @@
 		95FD187E1D0F4CF500156FB5 /* TwitterApp */ = {
 			isa = PBXGroup;
 			children = (
-				95FD187F1D0F4CF500156FB5 /* AppDelegate.swift */,
+				95FD18911D0F52C900156FB5 /* App Global */,
 				95FD18811D0F4CF500156FB5 /* ViewController.swift */,
 				95FD18831D0F4CF500156FB5 /* Main.storyboard */,
 				95FD18861D0F4CF500156FB5 /* Assets.xcassets */,
 				95FD18881D0F4CF500156FB5 /* LaunchScreen.storyboard */,
-				95FD188B1D0F4CF500156FB5 /* Info.plist */,
 			);
 			path = TwitterApp;
+			sourceTree = "<group>";
+		};
+		95FD18911D0F52C900156FB5 /* App Global */ = {
+			isa = PBXGroup;
+			children = (
+				95FD18921D0F52F300156FB5 /* tweet.json */,
+				95FD187F1D0F4CF500156FB5 /* AppDelegate.swift */,
+				95FD188B1D0F4CF500156FB5 /* Info.plist */,
+			);
+			name = "App Global";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +136,7 @@
 				95FD188A1D0F4CF500156FB5 /* LaunchScreen.storyboard in Resources */,
 				95FD18871D0F4CF500156FB5 /* Assets.xcassets in Resources */,
 				95FD18851D0F4CF500156FB5 /* Main.storyboard in Resources */,
+				95FD18931D0F52F300156FB5 /* tweet.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +300,7 @@
 				95FD18901D0F4CF500156FB5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
