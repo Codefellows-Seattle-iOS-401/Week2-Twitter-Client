@@ -39,6 +39,9 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Krk-eu-dfd"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -49,6 +52,9 @@
                             <constraint firstItem="GkN-JV-SNe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qqy-kU-R6r"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="GkN-JV-SNe" id="z1w-Cg-L15"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
