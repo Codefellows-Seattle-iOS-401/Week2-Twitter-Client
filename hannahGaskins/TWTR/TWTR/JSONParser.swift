@@ -21,12 +21,14 @@ class JSONParser {
                         tweets.append(tweet)
                     }
                 }
+                completion(success: true, tweets: tweets)
             }
         }
         catch { completion(success: false, tweets: nil) }
     }
     class func JSONData() -> NSData {
         guard let tweetJSONPath = NSBundle.mainBundle().URLForResource("tweet", withExtension: "json") else { fatalError("JSON file does not exist") }
+        // saying if tweetJSONPath is in fact valid then set it equal to the JSONData, 
         guard let tweetJSONData = NSData(contentsOfURL: tweetJSONPath) else { fatalError("Failed to convert JSON to data") }
         return tweetJSONData
     }
