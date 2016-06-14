@@ -11,6 +11,7 @@
 		EE90B8C71D0F5427005F4610 /* tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE90B8C61D0F5427005F4610 /* tweet.swift */; };
 		EE90B8C91D0F5433005F4610 /* user.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE90B8C81D0F5433005F4610 /* user.swift */; };
 		EE90B8CD1D0F55F7005F4610 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE90B8CC1D0F55F7005F4610 /* JSONParser.swift */; };
+		EE9EB0C71D109F12003A6CC1 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9EB0C61D109F12003A6CC1 /* API.swift */; };
 		EEB88BE51D0F511600BB7838 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB88BE41D0F511600BB7838 /* AppDelegate.swift */; };
 		EEB88BE71D0F511600BB7838 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB88BE61D0F511600BB7838 /* ViewController.swift */; };
 		EEB88BEA1D0F511600BB7838 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEB88BE81D0F511600BB7838 /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 		EE90B8C61D0F5427005F4610 /* tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tweet.swift; sourceTree = "<group>"; };
 		EE90B8C81D0F5433005F4610 /* user.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = user.swift; sourceTree = "<group>"; };
 		EE90B8CC1D0F55F7005F4610 /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
+		EE9EB0C61D109F12003A6CC1 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		EEB88BE11D0F511600BB7838 /* TWTR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TWTR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEB88BE41D0F511600BB7838 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEB88BE61D0F511600BB7838 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				EE90B8CC1D0F55F7005F4610 /* JSONParser.swift */,
+				EE9EB0C61D109F12003A6CC1 /* API.swift */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				EE90B8CD1D0F55F7005F4610 /* JSONParser.swift in Sources */,
 				EEB88BE71D0F511600BB7838 /* ViewController.swift in Sources */,
 				EE90B8C71D0F5427005F4610 /* tweet.swift in Sources */,
+				EE9EB0C71D109F12003A6CC1 /* API.swift in Sources */,
 				EEB88BE51D0F511600BB7838 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

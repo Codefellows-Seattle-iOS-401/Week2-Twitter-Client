@@ -24,15 +24,26 @@ class ViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        // make the call
-        JSONParser.tweetJSONFrom(JSONParser.JSONData()) { (success, tweets) in
-            if success {
-                if let tweets = tweets {
-                    self.datasource = tweets
-                }
-            }
-        }
+        self.update()
+        
+//        // make the call
+//        JSONParser.tweetJSONFrom(JSONParser.JSONData()) { (success, tweets) in
+//            if success {
+//                if let tweets = tweets {
+//                    self.datasource = tweets
+//                }
+//            }
+//        }
     }
+    
+    func update()  {
+        API.shared.getTweets( {(tweets) in
+            if let tweets = tweets {
+                self.datasource = tweets
+            }
+        } )
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
