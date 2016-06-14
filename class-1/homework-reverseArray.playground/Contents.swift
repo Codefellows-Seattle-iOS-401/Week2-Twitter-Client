@@ -2,6 +2,7 @@
 
 import UIKit
 
+//easy solution
 
 func reverseArray(array: [AnyObject]) -> [AnyObject] {
     
@@ -14,3 +15,6 @@ var secondArray = ["tre", "mike", "derek"]
 
 reverseArray(firstArray)
 reverseArray(secondArray)
+
+//hard solution
+
