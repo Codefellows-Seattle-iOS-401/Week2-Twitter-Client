@@ -14,7 +14,7 @@ typealias JSONParserCompletion = (success: Bool, tweets: [Tweet]?) -> ()
 class JSONParser {
     class func tweetJSONFrom(data: NSData, completion: JSONParserCompletion) {
         do {
-            if let rootTweet = try NSJSONSerialization.JSONObjectWithData(self.JSONData(), options: .MutableContainers) as? [[String: AnyObject]] {
+            if let rootTweet = try NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers) as? [[String: AnyObject]] {
                 var tweets = [Tweet]()
                 
                 for tweetJSON in rootTweet {
@@ -22,7 +22,6 @@ class JSONParser {
                         tweets.append(tweet)
                     }
                 }
-                
                 completion(success: true, tweets: tweets)
             }
         }

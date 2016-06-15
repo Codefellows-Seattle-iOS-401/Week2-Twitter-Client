@@ -16,6 +16,7 @@
 		0D17B3811D0F4FBB00768B91 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D17B3801D0F4FBB00768B91 /* User.swift */; };
 		0D17B3831D0F4FCF00768B91 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D17B3821D0F4FCF00768B91 /* Tweet.swift */; };
 		0D17B3851D0F500400768B91 /* tweet.json in Resources */ = {isa = PBXBuildFile; fileRef = 0D17B3841D0F500400768B91 /* tweet.json */; };
+		0DEC85C81D10A6DD001EBED6 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEC85C71D10A6DD001EBED6 /* API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		0D17B3801D0F4FBB00768B91 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0D17B3821D0F4FCF00768B91 /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		0D17B3841D0F500400768B91 /* tweet.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = tweet.json; path = "../../../class-1/lecture/tweet.json"; sourceTree = "<group>"; };
+		0DEC85C71D10A6DD001EBED6 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				0D17B37E1D0F4FA700768B91 /* JSONParser.swift */,
+				0DEC85C71D10A6DD001EBED6 /* API.swift */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				0D17B3831D0F4FCF00768B91 /* Tweet.swift in Sources */,
 				0D17B36A1D0F4EA300768B91 /* ViewController.swift in Sources */,
 				0D17B3681D0F4EA300768B91 /* AppDelegate.swift in Sources */,
+				0DEC85C81D10A6DD001EBED6 /* API.swift in Sources */,
 				0D17B37F1D0F4FA700768B91 /* JSONParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,6 +346,7 @@
 				0D17B3781D0F4EA300768B91 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
