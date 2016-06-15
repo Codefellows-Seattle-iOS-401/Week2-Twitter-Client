@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     //creates a connection to the table view
     @IBOutlet weak var tableView: UITableView!
     
-    //DID NOT ORIGINALLY HAVE THE DIDSET, WHAT IS THE PURPOSE?!
+    //Didset says theres new data on any data type and .reloadData reloads tableview
     var datasource = [Tweet]()
     {
         didSet {
@@ -24,20 +24,32 @@ class ViewController: UIViewController {
     //takes the data from the JSONData() and converts it into readable data using .tweetJSONfrom(). If it does complete these methods takes in
     override func viewDidLoad() {
         super.viewDidLoad()
-        JSONParser.tweetJSONFrom(JSONParser.JSONData())
-        {
-            (success, tweets) in
-            if  success {
-                if let tweets = tweets {
-                    self.datasource = tweets
-                }
-            }
-        }
+//        JSONParser.tweetJSONFrom(JSONParser.JSONData())
+//        {
+//            (success, tweets) in
+//            if  success {
+//                if let tweets = tweets {
+//                    self.datasource = tweets
+//                }
+//            }
+//        }
     }
 
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    //Updates datasource with tweets from API just when you open a window.
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.update()
+        
+    }
+    
+    func update() {
+        API.shared.getTweets { (tweets) in
+            if let tweets = tweets {
+                self.datasource = tweets
+            }
+        }
     }
 
 }

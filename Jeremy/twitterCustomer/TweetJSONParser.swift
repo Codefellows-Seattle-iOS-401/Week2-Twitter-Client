@@ -17,7 +17,7 @@ class JSONParser {
     {
         //Error handling: if the NSJSONSerialization is able to serialize the data, create a tweets array of the same type as Tweet. For a tweet in rootObject, append it to the tweets array.
         do {
-            if let rootObject = try NSJSONSerialization.JSONObjectWithData(self.JSONData(), options: .MutableContainers) as? [[String: AnyObject]]
+            if let rootObject = try NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers) as? [[String: AnyObject]]
             {
                 var tweets = [Tweet]()
                 

@@ -16,6 +16,7 @@
 		2913B0151D0F52D900FE47DC /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2913B0141D0F52D900FE47DC /* Tweet.swift */; };
 		2913B0171D0F52EA00FE47DC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2913B0161D0F52EA00FE47DC /* User.swift */; };
 		2913B0191D0F530700FE47DC /* TweetJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2913B0181D0F530700FE47DC /* TweetJSONParser.swift */; };
+		29891DAB1D10A1D3002D3675 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29891DAA1D10A1D3002D3675 /* API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		2913B0161D0F52EA00FE47DC /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2913B0181D0F530700FE47DC /* TweetJSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetJSONParser.swift; sourceTree = "<group>"; };
 		2913B0211D0FCD5F00FE47DC /* ExtraCredit.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = ExtraCredit.playground; path = ../ExtraCredit.playground; sourceTree = "<group>"; };
+		29891DAA1D10A1D3002D3675 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = ../API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				2913B0181D0F530700FE47DC /* TweetJSONParser.swift */,
+				29891DAA1D10A1D3002D3675 /* API.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 				2913B0151D0F52D900FE47DC /* Tweet.swift in Sources */,
 				2913B0191D0F530700FE47DC /* TweetJSONParser.swift in Sources */,
 				2913B0031D0F50BF00FE47DC /* ViewController.swift in Sources */,
+				29891DAB1D10A1D3002D3675 /* API.swift in Sources */,
 				2913B0011D0F50BF00FE47DC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
