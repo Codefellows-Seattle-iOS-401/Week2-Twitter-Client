@@ -95,14 +95,16 @@ class API {
         }
     }
     
-    private func updateTimeLine(completion: (tweets: [Tweet]?) -> ()) {
-        let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: .GET, URL: NSURL(string: "https://api.twitter.com/1.1/statuses/home_timeline.json"), parameters: nil)
+    private func updateTimeLine(urlString: String, completion: (tweets: [Tweet]?) -> ()) {
+        
+        let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: .GET, URL: NSURL(string: urlString), parameters: nil)
         
         request.account = self.account
         
         request.performRequestWithHandler { (data, response, error) in
             
             if let _ = error {
+                
                 print("Error: SLRequest type get for user Timeline could not be completed.")
                 completion(tweets: nil)
                 return
@@ -131,13 +133,21 @@ class API {
     }
     
     func getTweets(completion: (tweets: [Tweet]?) -> ()) {
+        
         if let _ = self.account {
-            self.updateTimeLine(completion)
+            // self.updateTimeLine(completion) // cancelled out for api
+            self.updateTimeLine("https://api.twitter.com/1.1/statuses/home_timeline.json", completion: completion)
         } else {
-            self.login( { (account) in
+            
+            self.login( { (account) -> () in
+                
                 if let account = account {
+                    
+                    // to set the account
                     API.shared.account = account
-                    self.updateTimeLine(completion)
+                    
+                    // to make the tweets call
+                    self.updateTimeLine("https://api.twitter.com/1.1/statuses/home_timeline.json", completion: completion)
                 } else {
                     print("Account is nil")
                 }
@@ -146,4 +156,69 @@ class API {
         
     }
     
+    // new function to get the individual user tweets and then use string interpolation at the end to add in their user name.
+    
+    func getUserTweets(username: String, completion: (tweets: [Tweet]?) -> ()) {
+        self.updateTimeLine("https://api.twitter.com/1.1/statuses/home_timeline.json?screen_name=\(username)", completion: completion)
+    }
+    
+    // additional image function
+    
+    func getImage(urlString: String, completion:(image: UIImage) -> ()) {
+        NSOperationQueue().addOperationWithBlock {
+            // this is all we need to do to leave teh mainQueue
+            // we need to convert URLstring -> URL -> NSData -> UIImage
+            // add in a few guard statements
+            guard let url = NSURL(string: urlString) else { return }
+            guard let data = NSData(contentsOfURL: url) else { return }
+            guard let image = UIImage(data: data) else { return }
+            
+            // now return on the mainQueue()
+            NSOperationQueue.mainQueue().addOperationWithBlock({
+                completion(image: image)
+            })
+
+        }
+    }
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

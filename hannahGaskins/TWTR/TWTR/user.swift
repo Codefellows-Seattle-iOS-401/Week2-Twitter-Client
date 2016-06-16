@@ -12,13 +12,18 @@ class User {
     let name: String
     let profileImageUrl: String
     let location: String
+    // adding in screenName for individual user's names and then initialize
+    let screenName: String
     
     init?(json: [String : AnyObject]) {
-        if let name = json["name"] as? String, profileImageUrl = json["profile_image_url"] as? String, location = json["location"] as? String {
+        if let name = json["name"] as? String, profileImageUrl = json["profile_image_url"] as? String, location = json["location"] as? String, screenName = json["screen_name"] as? String {
             
             self.name = name
             self.profileImageUrl = profileImageUrl
             self.location = location
+            self.screenName = screenName
+            
+            
         } else {
             return nil
         }

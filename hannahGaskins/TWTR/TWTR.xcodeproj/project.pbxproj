@@ -20,6 +20,7 @@
 		EEC718DA1D11F84D0056B716 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC718D91D11F84D0056B716 /* DetailViewController.swift */; };
 		EEC718DC1D12045F0056B716 /* Identity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC718DB1D12045F0056B716 /* Identity.swift */; };
 		EEC718DE1D120E980056B716 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC718DD1D120E980056B716 /* ProfileViewController.swift */; };
+		EEC718E01D1344280056B716 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC718DF1D1344280056B716 /* Cache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		EEC718D91D11F84D0056B716 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		EEC718DB1D12045F0056B716 /* Identity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identity.swift; sourceTree = "<group>"; };
 		EEC718DD1D120E980056B716 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		EEC718DF1D1344280056B716 /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				EEB88BE41D0F511600BB7838 /* AppDelegate.swift */,
+				EEC718DF1D1344280056B716 /* Cache.swift */,
 				EEC718DB1D12045F0056B716 /* Identity.swift */,
 				EEB88BF01D0F511600BB7838 /* Info.plist */,
 				EE90B8C21D0F534E005F4610 /* tweet.json */,
@@ -206,6 +209,7 @@
 				EEC718DC1D12045F0056B716 /* Identity.swift in Sources */,
 				EE90B8C71D0F5427005F4610 /* tweet.swift in Sources */,
 				EE9EB0C71D109F12003A6CC1 /* API.swift in Sources */,
+				EEC718E01D1344280056B716 /* Cache.swift in Sources */,
 				EEC718DE1D120E980056B716 /* ProfileViewController.swift in Sources */,
 				EEB88BE51D0F511600BB7838 /* AppDelegate.swift in Sources */,
 				EEC718DA1D11F84D0056B716 /* DetailViewController.swift in Sources */,
