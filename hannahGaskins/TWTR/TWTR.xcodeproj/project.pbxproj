@@ -21,6 +21,7 @@
 		EEC718DC1D12045F0056B716 /* Identity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC718DB1D12045F0056B716 /* Identity.swift */; };
 		EEC718DE1D120E980056B716 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC718DD1D120E980056B716 /* ProfileViewController.swift */; };
 		EEC718E01D1344280056B716 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC718DF1D1344280056B716 /* Cache.swift */; };
+		EEC718E21D1354580056B716 /* TweetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEC718E11D1354580056B716 /* TweetCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		EEC718DB1D12045F0056B716 /* Identity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identity.swift; sourceTree = "<group>"; };
 		EEC718DD1D120E980056B716 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		EEC718DF1D1344280056B716 /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		EEC718E11D1354580056B716 /* TweetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweetCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 				EEB88BEB1D0F511600BB7838 /* Assets.xcassets */,
 				EEB88BED1D0F511600BB7838 /* LaunchScreen.storyboard */,
 				EEB88BE81D0F511600BB7838 /* Main.storyboard */,
+				EEC718E11D1354580056B716 /* TweetCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEB88BEF1D0F511600BB7838 /* LaunchScreen.storyboard in Resources */,
+				EEC718E21D1354580056B716 /* TweetCell.xib in Resources */,
 				EEB88BEC1D0F511600BB7838 /* Assets.xcassets in Resources */,
 				EEB88BEA1D0F511600BB7838 /* Main.storyboard in Resources */,
 				EE90B8C31D0F534E005F4610 /* tweet.json in Resources */,

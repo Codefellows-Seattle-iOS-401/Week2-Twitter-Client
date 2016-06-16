@@ -8,9 +8,19 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var TableView: UITableView!
+    
+    // adding in cache call: 
+    var cache : Cache<UIImage>? {
+        if let delegate = UIApplication.sharedApplication().delegate as? AppDelegate {
+            return delegate.cache
+        }
+        return nil
+    }
+    
+    
     var datasource = [Tweet]() {
         didSet {
             self.TableView.reloadData()
