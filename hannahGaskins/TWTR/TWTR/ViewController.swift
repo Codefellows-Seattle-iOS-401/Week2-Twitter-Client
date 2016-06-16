@@ -19,7 +19,13 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupTableView()
+        self.navigationItem.title = "TWTR"
+        
     }
+    
+    
+    
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -36,6 +42,13 @@ class ViewController: UIViewController {
 //        }
     }
     
+    func setupTableView() {
+        self.TableView.estimatedRowHeight = 100
+        self.TableView.rowHeight = UITableViewAutomaticDimension
+    }
+    
+    
+    
     func update()  {
         API.shared.getTweets( {(tweets) in
             if let tweets = tweets {
@@ -48,14 +61,23 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    // everytime we move data we override this function
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == DetailViewController.id() {
+            guard let detailViewController = segue.destinationViewController as? DetailViewController else { return }
+            guard let indexPath = self.TableView.indexPathForSelectedRow else { return }
+            detailViewController.tweet = self.datasource[indexPath.row]
+        }
+    }
 
 }
 extension ViewController: UITableViewDataSource {
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(TableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.datasource.count
     }
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("tweetCell", forIndexPath: indexPath)
+    func tableView(TableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = TableView.dequeueReusableCellWithIdentifier("tweetCell", forIndexPath: indexPath)
         let tweet = self.datasource[indexPath.row]
         
         cell.textLabel?.text = tweet.text

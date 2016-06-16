@@ -20,7 +20,7 @@ class API {
     
     
     static let shared = API()
-    var account: ACAccount?
+    var account: ACAccount? // account variable to hold our information
     
     private func login(completion: (account: ACAccount?) -> ()) {
         // set up account store
@@ -54,7 +54,7 @@ class API {
         
     }
     
-    private func GETOAuthUser(completion: (user: User?) -> ()) {
+    func GETOAuthUser(completion: (user: User?) -> ()) {
         let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: .GET, URL: NSURL(string: "https://api.twitter.com/1.1/account/verify_credentials.json"), parameters: nil)
         
         request.account = self.account
@@ -72,6 +72,7 @@ class API {
             case 200...299:
                 do {
                     if let userJSON = try NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers) as? [String : AnyObject]{
+                        print(userJSON)
                         completion(user: User(json: userJSON))
                     }
                 } catch {
