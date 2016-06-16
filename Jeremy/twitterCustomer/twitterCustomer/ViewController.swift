@@ -10,10 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    //creates a connection to the table view
     @IBOutlet weak var tableView: UITableView!
-    
-    //Didset says theres new data on any data type and .reloadData reloads tableview
+
     var datasource = [Tweet]()
     {
         didSet {
@@ -21,9 +19,10 @@ class ViewController: UIViewController {
         }
     }
     
-    //takes the data from the JSONData() and converts it into readable data using .tweetJSONfrom(). If it does complete these methods takes in
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.title = "TWRT"
 //        JSONParser.tweetJSONFrom(JSONParser.JSONData())
 //        {
 //            (success, tweets) in
@@ -35,21 +34,42 @@ class ViewController: UIViewController {
 //        }
     }
 
-    
-    //Updates datasource with tweets from API just when you open a window.
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
         self.update()
+        self.setupTableView()
+    }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == DetailedViewController.id() {
+            guard let detailViewController = segue.destinationViewController as? DetailedViewController else { return }
+            guard let indexPath = self.tableView.indexPathForSelectedRow else { return }
+            
+            detailViewController.tweet = self.datasource[indexPath.row]
+        }
+        
+        
         
     }
     
+    func setupTableView() {
+        self.tableView.estimatedRowHeight = 100
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+    }
+    
     func update() {
+
         API.shared.getTweets { (tweets) in
             if let tweets = tweets {
                 self.datasource = tweets
             }
+//CREATE AN ELSE STATEMENT THAT CALLS THE LOGIN FUNCTION SO YOU CAN LOG IN TO OTHER ACCOUNTS. FOR EACH LOGIN, SET THE ACCOUNT TO THE API DATASOURCE SO YOU CAN SET A DIFFERENT ACCOUNT
         }
+    }
+    
+    @IBAction func profileViewController(sender: AnyObject) {
+        self.performSegueWithIdentifier("profileViewController", sender: nil)
     }
 
 }

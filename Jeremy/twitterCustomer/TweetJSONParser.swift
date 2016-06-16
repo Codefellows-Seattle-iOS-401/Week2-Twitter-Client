@@ -11,11 +11,9 @@ import Foundation
 typealias JSONParserCompletion = (success: Bool, tweets: [Tweet]?) -> ()
 
 class JSONParser {
-    
-    //
+
     class func tweetJSONFrom (data: NSData, completion: JSONParserCompletion)
     {
-        //Error handling: if the NSJSONSerialization is able to serialize the data, create a tweets array of the same type as Tweet. For a tweet in rootObject, append it to the tweets array.
         do {
             if let rootObject = try NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers) as? [[String: AnyObject]]
             {
@@ -37,10 +35,8 @@ class JSONParser {
     }
     
 
-    //This function checks to see if we have a path to the data and saves the data to return it
     class func JSONData() -> NSData
     {
-        //checks to see if there is a source Tweet.json and opens that bundle
         guard let tweetJSONPath = NSBundle.mainBundle().URLForResource("tweet", withExtension: "json")
             else
             {

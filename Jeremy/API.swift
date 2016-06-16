@@ -15,25 +15,21 @@ class API {
     static let shared = API()
     
     var account: ACAccount?
-    //Prompts Login and gets credentials
+
+//MAKE THIS PRIVATE FUNCTION PUBLIC SO YOU CAN CALL IT IN THE ViewController.swift file
     private func login (completion: (account: ACAccount?) -> ()) {
-        
-        //accountStore is an instance of ACAccountStore object so that you can create and retrieve accounts from the Accounts database
+
         let accountStore = ACAccountStore()
-        //Refers to the Twitter account type
         let accountType = accountStore.accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierTwitter)
         
-        //The user can grant access to their Twitter or not allow access
         accountStore.requestAccessToAccountsWithType(accountType, options: nil) { (granted, error) in
             
-            //If user does not allow access; "_" is a placeholder to an unnamed constant because we won't use it again.
             if let _ = error {
                 print("Error: Request access to account denied.")
                 completion(account: nil)
                 return
             }
             
-            //If user grants access, make account equeal to the first account
             if granted {
                 if let account = accountStore.accountsWithAccountType(accountType).first as? ACAccount {
                     completion(account: account)
@@ -41,22 +37,18 @@ class API {
                 }
             }
             
-            //User grants access, but is not logged into account
             print("Error: You are not logged into a Twitter account.")
             completion(account: nil)
             return
         }
     }
     
-    //The function takes a completion and the completion takes in an optional user.
-    private func GETOAuthUser (completion: (user: User?) -> ()) {
-        
-        //request constant saves the path to the request object to be able to verify the user
+    func GETOAuthUser (completion: (user: User?) -> ()) {
+
         let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: SLRequestMethod.GET, URL: NSURL(string:"https://api.twitter.com/1.1/account/verify_credentials.json"), parameters: nil)
         
         request.account = self.account
         
-        //request.performRequestWith handler submits request for credentials.
         request.performRequestWithHandler { (data, response, error) in
             
             if let _ = error {
@@ -64,8 +56,7 @@ class API {
                 completion(user: nil)
                 return
             }
-            
-            //If the response.statusCode comes back, unwrap the bundle and convert JSON data to be readable.
+
             switch response.statusCode {
             case 200...299:
                 do {
@@ -89,15 +80,12 @@ class API {
         }
     }
     
-    //Once granted access and able to verify user, get the tweets
     private func updateTimeLine (completion: (tweets: [Tweet]?) -> ()) {
         
-        //request constant saves the path to the tweets in the timeline
         let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: .GET, URL: NSURL(string: "https://api.twitter.com/1.1/statuses/home_timeline.json"), parameters: nil)
         
         request.account = self.account
         
-        //Makes a request to the timeline API
         request.performRequestWithHandler { (data, response, error) in
             
             if let _ = error {
@@ -106,7 +94,6 @@ class API {
                 return
             }
             
-            //If it successfully finds tweets, sets the information to be a tweet
             switch response.statusCode {
             case 200...299:
                 JSONParser.tweetJSONFrom(data, completion: {(success, tweets) in dispatch_async(dispatch_get_main_queue(), { completion (tweets: tweets)
@@ -125,7 +112,6 @@ class API {
         }
     }
     
-    //getTweets is called in the ViewController and passes in the completion to the updateTimeLine for execution.
     func getTweets (completion: (tweets: [Tweet]?) -> ()) {
     
         if let _ = self.account {

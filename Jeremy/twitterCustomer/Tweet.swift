@@ -8,15 +8,13 @@
 
 import Foundation
 
-//Takes in an array of 3 dictionaries
 class Tweet
 {
-    //Sets the necessary attributes text, id and user of the Tweet class
     let text: String
     let id: String
     let user: User?
+    var retweet: Tweet?
     
-    //Initialization connects the attributes created in the tweet class to the corresponding categories in the JSON file
     init? (json: [String: AnyObject])
     {
         if let text = json["text"] as? String, id = json["id_str"] as? String, user = json["user"] as? [String: AnyObject]
@@ -28,6 +26,13 @@ class Tweet
         else
         {
             return nil
+        }
+        
+        
+        if let retweetJSON = json["retweeted_status"] as? [String: AnyObject] {
+            if let retweet = Tweet(json: retweetJSON) {
+                self.retweet = retweet
+            }
         }
         
     }
