@@ -26,7 +26,7 @@ class API {
             }
             
             if granted {
-                if let accounts = accountStore.accountsWithAccountType(accountType).first as? [ACAccount] {
+                if let accounts = accountStore.accountsWithAccountType(accountType) as? [ACAccount] {
                     dispatch_async(dispatch_get_main_queue(), {
                         completion(account: accounts)
                         return
