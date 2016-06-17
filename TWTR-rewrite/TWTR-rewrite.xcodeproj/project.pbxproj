@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D297DC11D13C62B0009546E /* TweetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D297DC01D13C62B0009546E /* TweetCell.xib */; };
+		0D297DC41D13C6790009546E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D297DC21D13C6790009546E /* Main.storyboard */; };
 		0D5A707A1D13830300DCA128 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5A70791D13830300DCA128 /* AppDelegate.swift */; };
 		0D5A707C1D13830300DCA128 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5A707B1D13830300DCA128 /* ViewController.swift */; };
 		0D5A70811D13830300DCA128 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D5A70801D13830300DCA128 /* Assets.xcassets */; };
@@ -21,10 +23,11 @@
 		0D5A709F1D1399BB00DCA128 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5A709E1D1399BB00DCA128 /* JSONParser.swift */; };
 		0D5A70A11D139A1500DCA128 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5A70A01D139A1500DCA128 /* API.swift */; };
 		0D5A70A31D139BDB00DCA128 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5A70A21D139BDB00DCA128 /* Cache.swift */; };
-		0DF4E4C41D13A2C800503A7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DF4E4C21D13A2C800503A7A /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D297DC01D13C62B0009546E /* TweetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TweetCell.xib; path = "../../../../../Downloads/TWTR 2/TweetCell.xib"; sourceTree = "<group>"; };
+		0D297DC31D13C6790009546E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../../../../Downloads/TWTR 3/Base.lproj/Main.storyboard"; sourceTree = "<group>"; };
 		0D5A70761D13830300DCA128 /* TWTR-rewrite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TWTR-rewrite.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D5A70791D13830300DCA128 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D5A707B1D13830300DCA128 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -41,7 +44,6 @@
 		0D5A709E1D1399BB00DCA128 /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		0D5A70A01D139A1500DCA128 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		0D5A70A21D139BDB00DCA128 /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
-		0DF4E4C31D13A2C800503A7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../../Downloads/TWTR 2/Base.lproj/Main.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +120,8 @@
 			isa = PBXGroup;
 			children = (
 				0D5A709C1D13976700DCA128 /* TweetCell.swift */,
-				0DF4E4C21D13A2C800503A7A /* Main.storyboard */,
+				0D297DC21D13C6790009546E /* Main.storyboard */,
+				0D297DC01D13C62B0009546E /* TweetCell.xib */,
 				0D5A70801D13830300DCA128 /* Assets.xcassets */,
 				0D5A70821D13830300DCA128 /* LaunchScreen.storyboard */,
 			);
@@ -194,7 +197,8 @@
 			files = (
 				0D5A70841D13830300DCA128 /* LaunchScreen.storyboard in Resources */,
 				0D5A70811D13830300DCA128 /* Assets.xcassets in Resources */,
-				0DF4E4C41D13A2C800503A7A /* Main.storyboard in Resources */,
+				0D297DC11D13C62B0009546E /* TweetCell.xib in Resources */,
+				0D297DC41D13C6790009546E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,20 +227,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		0D297DC21D13C6790009546E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0D297DC31D13C6790009546E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		0D5A70821D13830300DCA128 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				0D5A70831D13830300DCA128 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		0DF4E4C21D13A2C800503A7A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0DF4E4C31D13A2C800503A7A /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

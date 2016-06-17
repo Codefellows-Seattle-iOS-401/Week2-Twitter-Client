@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "E712DCFE277089CFE4710F5EE4265EB306633C6F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "E712DCFE277089CFE4710F5EE4265EB306633C6F" : 0,
+    "EB79EE5254103E98E9FA292F452FAD5F00FD61B2" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "48DF7299-C900-4885-B668-06E6F799A65A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "E712DCFE277089CFE4710F5EE4265EB306633C6F" : "Week2-Twitter-Client\/",
+    "EB79EE5254103E98E9FA292F452FAD5F00FD61B2" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "TWTR-rewrite",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "TWTR-rewrite\/TWTR-rewrite.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/erinroby\/Week2-Twitter-Client.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E712DCFE277089CFE4710F5EE4265EB306633C6F"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/erinroby\/iOS-401-class-5.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EB79EE5254103E98E9FA292F452FAD5F00FD61B2"
+    }
+  ]
+}
