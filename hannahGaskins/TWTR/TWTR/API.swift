@@ -159,7 +159,7 @@ class API {
     // new function to get the individual user tweets and then use string interpolation at the end to add in their user name.
     
     func getUserTweets(username: String, completion: (tweets: [Tweet]?) -> ()) {
-        self.updateTimeLine("https://api.twitter.com/1.1/statuses/home_timeline.json?screen_name=\(username)", completion: completion)
+        self.updateTimeLine("https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=\(username)", completion: completion)
     }
     
     // additional image function

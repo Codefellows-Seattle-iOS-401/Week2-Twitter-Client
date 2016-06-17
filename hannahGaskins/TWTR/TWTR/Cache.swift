@@ -29,8 +29,7 @@ class Cache<T: Hashable> { // the class needs to be Hashable bc it is generic an
         } else {
             let top = self.transactions.removeFirst() // will remove 1st or top element in transction log. top is a key that we can use in the dict to remove values
             self.database.removeValueForKey(top) // our transaction log will be size - 1 (bc we remove one) and our database will be size - 1
-            self.database[key] = data
-            self.transactions.append(key) // or use self.write(data, key: key)
+            self.write(data, key: key)
         }
     }
     

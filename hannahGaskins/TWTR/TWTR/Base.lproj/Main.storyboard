@@ -166,18 +166,43 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ko6-sg-nMZ">
+                                <rect key="frame" x="250" y="155" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Mov-PT-PQv"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="Wqv-4Y-DbU"/>
+                                    <constraint firstAttribute="width" constant="100" id="jbz-sI-bee"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="qaB-sH-uvM"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EU5-e8-90S">
+                                <rect key="frame" x="250" y="162" width="100" height="88"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="88" id="IcG-pL-xJ0"/>
+                                    <constraint firstAttribute="width" constant="100" id="xgp-RO-5PY"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="J0D-dO-c4E" kind="show" id="m0z-4c-mXy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="kar-of-iHL" firstAttribute="top" secondItem="EU5-e8-90S" secondAttribute="bottom" constant="39" id="KB9-0z-umi"/>
                             <constraint firstItem="kar-of-iHL" firstAttribute="centerY" secondItem="jwG-DR-q4f" secondAttribute="centerY" id="KEw-4m-rFJ"/>
                             <constraint firstItem="SNx-Vh-5Pc" firstAttribute="centerX" secondItem="kar-of-iHL" secondAttribute="centerX" id="N3L-Oi-zFj"/>
+                            <constraint firstItem="ko6-sg-nMZ" firstAttribute="centerX" secondItem="kar-of-iHL" secondAttribute="centerX" id="RH4-05-nKp"/>
+                            <constraint firstItem="EU5-e8-90S" firstAttribute="leading" secondItem="ko6-sg-nMZ" secondAttribute="leading" id="bEh-e7-3OB"/>
                             <constraint firstItem="kar-of-iHL" firstAttribute="centerY" secondItem="jwG-DR-q4f" secondAttribute="centerY" id="cP7-bA-e6B"/>
+                            <constraint firstItem="kar-of-iHL" firstAttribute="top" secondItem="ko6-sg-nMZ" secondAttribute="bottom" constant="34" id="dTc-xi-vgd"/>
                             <constraint firstItem="kar-of-iHL" firstAttribute="leading" secondItem="jwG-DR-q4f" secondAttribute="leadingMargin" id="fwC-Kx-DZg"/>
                             <constraint firstItem="kar-of-iHL" firstAttribute="trailing" secondItem="jwG-DR-q4f" secondAttribute="trailingMargin" id="wOh-df-Has"/>
                             <constraint firstItem="SNx-Vh-5Pc" firstAttribute="top" secondItem="kar-of-iHL" secondAttribute="bottom" constant="29" id="xa2-lp-2Ta"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="profileImageView" destination="ko6-sg-nMZ" id="NoO-fv-UTT"/>
                         <outlet property="tweetLabel" destination="kar-of-iHL" id="Xx4-HB-WKV"/>
                         <outlet property="userLabel" destination="SNx-Vh-5Pc" id="NOT-j0-RKc"/>
                     </connections>
@@ -185,6 +210,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lbh-Tc-LgF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1952" y="1104"/>
+        </scene>
+        <!--User Timeline View Controller-->
+        <scene sceneID="skr-hD-y4p">
+            <objects>
+                <viewController storyboardIdentifier="UserTimelineViewController" id="J0D-dO-c4E" customClass="UserTimelineViewController" customModule="TWTR" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PF8-LE-ftl"/>
+                        <viewControllerLayoutGuide type="bottom" id="nJC-Bc-233"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XYC-ke-9cA">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dZe-vM-LK3">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="J0D-dO-c4E" id="gqN-gB-5iN"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="dZe-vM-LK3" secondAttribute="trailing" id="5M2-V9-Ksa"/>
+                            <constraint firstItem="dZe-vM-LK3" firstAttribute="top" secondItem="PF8-LE-ftl" secondAttribute="bottom" id="Frj-rp-r72"/>
+                            <constraint firstItem="nJC-Bc-233" firstAttribute="top" secondItem="dZe-vM-LK3" secondAttribute="bottom" id="Nfr-67-Low"/>
+                            <constraint firstItem="dZe-vM-LK3" firstAttribute="leading" secondItem="XYC-ke-9cA" secondAttribute="leading" id="myl-WZ-AV0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="dZe-vM-LK3" id="uti-IQ-S4K"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="amo-q8-wr7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2658" y="1104"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rSN-g0-6ep">

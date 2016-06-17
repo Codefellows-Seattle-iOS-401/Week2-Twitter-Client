@@ -55,16 +55,19 @@ class ViewController: UIViewController, UITableViewDelegate {
     func setupTableView() {
         self.TableView.estimatedRowHeight = 100
         self.TableView.rowHeight = UITableViewAutomaticDimension
+        self.TableView.registerNib(UINib(nibName: "TweetCell", bundle: nil), forCellReuseIdentifier: "tweetCell") // nib name refers to class (uppercase), the lowercase is the cell label for reuse. bundle is nil bc we are in the same bundle
+        self.TableView.delegate = self
+
     }
     
     
     
     func update()  {
-        API.shared.getTweets( {(tweets) in
+        API.shared.getTweets { (tweets) -> () in
             if let tweets = tweets {
                 self.datasource = tweets
             }
-        } )
+        }
     }
     
     
@@ -80,17 +83,27 @@ class ViewController: UIViewController, UITableViewDelegate {
             detailViewController.tweet = self.datasource[indexPath.row]
         }
     }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        // fire off above code prepForSegue here: 
+        self.performSegueWithIdentifier(DetailViewController.id(), sender: nil)
+    }
 
 }
 extension ViewController: UITableViewDataSource {
     func tableView(TableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.datasource.count
     }
+    
     func tableView(TableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = TableView.dequeueReusableCellWithIdentifier("tweetCell", forIndexPath: indexPath)
+        
+        let cell = TableView.dequeueReusableCellWithIdentifier("tweetCell", forIndexPath: indexPath) as! TweetCell
+        
         let tweet = self.datasource[indexPath.row]
         
-        cell.textLabel?.text = tweet.text
+        // we have to register the nib before we can use it. then within the tablView function in extention ViewController we force unwrap something
+        
+        cell.tweet = tweet
         
         return cell
     }
