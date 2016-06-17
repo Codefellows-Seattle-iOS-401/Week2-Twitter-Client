@@ -35,7 +35,6 @@ class UserTimelineViewController: UIViewController, UITableViewDataSource, Ident
             }
             
         }
-        // additional setup after loading view
         
     }
     

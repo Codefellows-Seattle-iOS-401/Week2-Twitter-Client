@@ -183,7 +183,7 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="J0D-dO-c4E" kind="show" id="m0z-4c-mXy"/>
+                                    <segue destination="J0D-dO-c4E" kind="show" identifier="UserTimelineViewController" id="m0z-4c-mXy"/>
                                 </connections>
                             </button>
                         </subviews>
