@@ -5,9 +5,9 @@
 	* Create User class
 	* Create MVC groups
 		* Organize your files into proper MVC groups.
-	* Create your JSONParser class
-		* Parse the JSON file into tweets, make sure all properties on each tweet are being set.
-	* Display those tweet objects in a tableView. 
+* Create your JSONParser class
+	* Parse the JSON file into tweets, make sure all properties on each tweet are being set.
+* Display tweets in a tableView. 
 		* Do **not** use the same `Basic` cell we used in class, instead use `Subtitle`.
 			* The subtitle label should show the User's `name` string.
 	* Assign `ViewController.swift` to be the `dataSource` of `tableView` **programmatically**, not in storyboards.
