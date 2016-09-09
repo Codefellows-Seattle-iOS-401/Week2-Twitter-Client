@@ -3,8 +3,8 @@
 * Create Model  
 	* Create Tweet class  
 	* Create User class  
-	* Create MVC groups  
-		* Organize your files into proper MVC groups.  
+* Create MVC groups  
+	* Organize your files into proper MVC groups.  
 * Create your JSONParser class  
 	* Parse the JSON file into tweets, make sure all properties on each tweet are being set.  
 * Display tweets in a tableView.  
