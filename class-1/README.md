@@ -1,13 +1,17 @@
 #Week 2 - Class 1
 ##Homework
-* Create your MVC groups
-* Create your Tweet class
-* Create your User class
-* Create your TweetJSONParser class
-* Add text & id properties to your Tweet class
-* Add properties for the username, and profileImageURL(all string types) to your User class
-* Parse the JSON file into tweets, make sure all properties on each tweet are being set.
-* Display those tweet objects in the table view, just the text for the tweet is fine today
+* Create Model
+	* Create Tweet class
+	* Create User class
+	* Create MVC groups
+		* Organize your files into proper MVC groups.
+	* Create your JSONParser class
+		* Parse the JSON file into tweets, make sure all properties on each tweet are being set.
+	* Display those tweet objects in a tableView. 
+		* Do **not** use the same `Basic` cell we used in class, instead use `Subtitle`.
+			* The subtitle label should show the User's `name` string.
+	* Assign `ViewController.swift` to be the `dataSource` of `tableView` **programmatically**, not in storyboards.
+		* This will take a little research.
 * **Code Challenge:**
 	* Write a function that reverses an array
 
