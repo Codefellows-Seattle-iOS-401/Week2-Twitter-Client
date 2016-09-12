@@ -12,6 +12,8 @@
 			* The subtitle label should show the User's `name` string.  
 	* Assign `ViewController.swift` to be the `dataSource` of `tableView` **programmatically**, not in storyboards.  
 		* This will take a little research.  
+	* Assign `ViewController.swift` to be the `delegate` of `tableView` and implement the `tableView(_ tableView:, didSelectRowAt indexPath:)` method.
+		* When a user clicks on a specific cell, `print()` the `indexPath.row` to the console.
 * **Code Challenge:**  
 	* Write a function that reverses an array  
 
