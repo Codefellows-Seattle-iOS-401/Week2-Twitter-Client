@@ -9,7 +9,7 @@
 * Each Requirement will hold an equal percentage of the grade.
 
 ####Coding Challenge
-> If a coding challenge is provided, this will be accounted for in Lab Assignment grade.
+> If a coding challenge is provided, this will be accounted for in Lab Assignment grade. Use comments to explain your thought process.
 
 * Working solution
 * Syntactically correct code
@@ -26,6 +26,4 @@
 
 ###Reminders:
 * Assignments Can be Turned in Late. **2 points** will be deducted for late assignments.
-* Assignments will **NOT** be able to be graded **if they DO NOT BUILD/RUN**.
-
-* **DUE DATE:** Homework is due by ***Midnight*** at the end of each day.
+* Assignments will **NOT** be graded **if they DO NOT BUILD/RUN**.  
