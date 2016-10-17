@@ -7,12 +7,20 @@ import UIKit
 /*
  #NOTES:
  
+ Xcode & Git
+ 
+ * gitignore
+    - hiding files that you don't want to track!
+    -
  
  
  
  
  
  
+ gitignore.io
+    -> copy the text provided
+    -> 
  
  */
 
