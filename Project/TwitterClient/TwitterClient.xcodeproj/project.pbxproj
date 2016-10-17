@@ -7,18 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C56DBE71DB590AA000CE90C /* Tweet.json in Resources */ = {isa = PBXBuildFile; fileRef = 7C56DBE61DB590AA000CE90C /* Tweet.json */; };
 		7CA2F3C81DB5329C00C5234F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA2F3C71DB5329C00C5234F /* AppDelegate.swift */; };
 		7CA2F3CA1DB5329C00C5234F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA2F3C91DB5329C00C5234F /* ViewController.swift */; };
 		7CA2F3CD1DB5329D00C5234F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CA2F3CB1DB5329D00C5234F /* Main.storyboard */; };
 		7CA2F3CF1DB5329D00C5234F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CA2F3CE1DB5329D00C5234F /* Assets.xcassets */; };
 		7CA2F3D21DB5329D00C5234F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CA2F3D01DB5329D00C5234F /* LaunchScreen.storyboard */; };
-		7CA2F3DC1DB5437B00C5234F /* Tweet.json in Resources */ = {isa = PBXBuildFile; fileRef = 7CA2F3DB1DB5437B00C5234F /* Tweet.json */; };
 		7CA2F3DE1DB543CB00C5234F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA2F3DD1DB543CB00C5234F /* User.swift */; };
 		7CA2F3E01DB543DF00C5234F /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA2F3DF1DB543DF00C5234F /* Tweet.swift */; };
 		7CA2F3E51DB54F8F00C5234F /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA2F3E41DB54F8E00C5234F /* JSONParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7C56DBE61DB590AA000CE90C /* Tweet.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Tweet.json; sourceTree = "<group>"; };
 		7CA2F3C41DB5329C00C5234F /* TwitterClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CA2F3C71DB5329C00C5234F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CA2F3C91DB5329C00C5234F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -26,7 +27,6 @@
 		7CA2F3CE1DB5329D00C5234F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7CA2F3D11DB5329D00C5234F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7CA2F3D31DB5329D00C5234F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7CA2F3DB1DB5437B00C5234F /* Tweet.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Tweet.json; path = ../Tweet.json; sourceTree = "<group>"; };
 		7CA2F3DD1DB543CB00C5234F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7CA2F3DF1DB543DF00C5234F /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		7CA2F3E41DB54F8E00C5234F /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
@@ -43,6 +43,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7C9F723E1DB57FD4007A519C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7CA2F3D01DB5329D00C5234F /* LaunchScreen.storyboard */,
+				7CA2F3CB1DB5329D00C5234F /* Main.storyboard */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		7CA2F3BB1DB5329B00C5234F = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +71,7 @@
 		7CA2F3C61DB5329C00C5234F /* TwitterClient */ = {
 			isa = PBXGroup;
 			children = (
+				7C9F723E1DB57FD4007A519C /* Controller */,
 				7CA2F3E31DB5441D00C5234F /* Model */,
 				7CA2F3E11DB543EC00C5234F /* View */,
 				7CA2F3E21DB543FD00C5234F /* Utilities */,
@@ -72,9 +82,7 @@
 		7CA2F3E11DB543EC00C5234F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				7CA2F3D01DB5329D00C5234F /* LaunchScreen.storyboard */,
 				7CA2F3C91DB5329C00C5234F /* ViewController.swift */,
-				7CA2F3CB1DB5329D00C5234F /* Main.storyboard */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -82,7 +90,7 @@
 		7CA2F3E21DB543FD00C5234F /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				7CA2F3DB1DB5437B00C5234F /* Tweet.json */,
+				7C56DBE61DB590AA000CE90C /* Tweet.json */,
 				7CA2F3C71DB5329C00C5234F /* AppDelegate.swift */,
 				7CA2F3CE1DB5329D00C5234F /* Assets.xcassets */,
 				7CA2F3D31DB5329D00C5234F /* Info.plist */,
@@ -163,7 +171,7 @@
 				7CA2F3D21DB5329D00C5234F /* LaunchScreen.storyboard in Resources */,
 				7CA2F3CF1DB5329D00C5234F /* Assets.xcassets in Resources */,
 				7CA2F3CD1DB5329D00C5234F /* Main.storyboard in Resources */,
-				7CA2F3DC1DB5437B00C5234F /* Tweet.json in Resources */,
+				7C56DBE71DB590AA000CE90C /* Tweet.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +311,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = BL79WF9F2T;
 				INFOPLIST_FILE = TwitterClient/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JacobDobson.TwitterClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -316,6 +325,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = BL79WF9F2T;
 				INFOPLIST_FILE = TwitterClient/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JacobDobson.TwitterClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -342,6 +352,7 @@
 				7CA2F3D81DB5329D00C5234F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
