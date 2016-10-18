@@ -77,7 +77,6 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     cell.textLabel?.text = currentTweet.text
     
         
-        
     return cell
         
     }
