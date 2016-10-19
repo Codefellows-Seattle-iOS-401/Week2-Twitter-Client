@@ -16,6 +16,7 @@
 		ED943D531DB543CD0015CCCB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED943D521DB543CD0015CCCB /* User.swift */; };
 		ED943D551DB543DB0015CCCB /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED943D541DB543DB0015CCCB /* Tweet.swift */; };
 		ED943D581DB54F7C0015CCCB /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED943D571DB54F7C0015CCCB /* JSONParser.swift */; };
+		EDBC05B81DB69E2A0011F611 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBC05B71DB69E2A0011F611 /* API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		ED943D521DB543CD0015CCCB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		ED943D541DB543DB0015CCCB /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		ED943D571DB54F7C0015CCCB /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
+		EDBC05B71DB69E2A0011F611 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 		ED943D561DB5444B0015CCCB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EDBC05B71DB69E2A0011F611 /* API.swift */,
 				ED943D521DB543CD0015CCCB /* User.swift */,
 				ED943D571DB54F7C0015CCCB /* JSONParser.swift */,
 				ED943D541DB543DB0015CCCB /* Tweet.swift */,
@@ -178,6 +181,7 @@
 				ED943D581DB54F7C0015CCCB /* JSONParser.swift in Sources */,
 				ED943D3F1DB532A40015CCCB /* AppDelegate.swift in Sources */,
 				ED943D531DB543CD0015CCCB /* User.swift in Sources */,
+				EDBC05B81DB69E2A0011F611 /* API.swift in Sources */,
 				ED943D551DB543DB0015CCCB /* Tweet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

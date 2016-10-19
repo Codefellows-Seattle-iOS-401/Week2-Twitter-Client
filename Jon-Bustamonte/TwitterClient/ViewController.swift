@@ -32,10 +32,15 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
             super.viewDidAppear(animated)
         
-        JSONParser.tweetsFrom(data: JSONParser.sampleJSONData) { (success, results) in
-            if success {
-                if let tweets = results {
-                    self.allTweets = tweets
+            update()
+        
+            }
+    
+    func update() {
+        API.shared.getTweets { (tweets) in
+            if tweets != nil {
+                OperationQueue.main.addOperation {
+                    self.allTweets = tweets!
                 }
             }
         }
