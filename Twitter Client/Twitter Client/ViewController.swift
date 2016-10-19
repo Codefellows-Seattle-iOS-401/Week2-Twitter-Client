@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
     @IBOutlet weak var tableView: UITableView!
     
     // This is an array that contains only class Tweet types
@@ -22,8 +23,12 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        
+        self.tableView.estimatedRowHeight = 75
+        self.tableView.rowHeight = UITableViewAutomaticDimension
         
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -31,18 +36,19 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+    
         update()
-
     }
     
-    // everything in curly braces after getTweets is supposed to be the parameters of getTweets. Because getTweets was originally coded to take in a parameter of a function that has the signature of ([Tweet]?, String?) then there has to be at least two placeholders in this closure to represent that signature even though those placeholders don't explicitly have value yet, and even though we're not using one of them.
+    // everything in curly braces after getTweets is supposed to be the parameters of getTweets. Because getTweets was originally coded to take in a parameter of a function that has the signature of ([Tweet]?, String?) -> () then there has to be at least two placeholders in this closure to represent that signature even though those placeholders don't explicitly have value yet, and even though we're not using one of them.
+    
+    // We can access getTweets from here because it's a singleton
     
     
     func update() {
         API.shared.getTweets { (tweets, error) in
             if tweets != nil {
-                OperationQueue.main.addOperation {
+                OperationQueue.main.addOperation { () in
                     self.allTweets = tweets!
                     self.tableView.reloadData()
                 }
@@ -55,7 +61,6 @@ class ViewController: UIViewController {
         
         // Dispose of any resources that can be recreated.
         
-        
     }
 }
 
@@ -66,7 +71,8 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TweetCell", for: indexPath)
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TweetCell", for: indexPath) as? TweetTableViewCell
         
         
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -74,10 +80,12 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     let currentTweet = self.allTweets[indexPath.row]
-    cell.textLabel?.text = currentTweet.text
+        
+        
+    cell?.tweetText.text = currentTweet.text
     
         
-    return cell
+    return cell!
         
     }
 }
