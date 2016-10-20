@@ -21,6 +21,7 @@ class API {
     static let shared = API ()
     
     var account : ACAccount?
+    var userProfile: ACAccount?
     
     private func login (completion: @escaping accountCompletion) {
         let accountStore = ACAccountStore()
@@ -77,11 +78,11 @@ class API {
                     default:
                         print("Unrecognized Status Code")
                 }
-                
                 completion(nil, "Sorry Charlie")
             })
         }
     }
+    
     
     private func updateTimeLine (completion: @escaping tweetsCompletion) {
         let url = URL(string: "https://api.twitter.com/1.1/statuses/home_timeline.json")
@@ -118,10 +119,10 @@ class API {
                     default:
                         print("Unrecognized Status Code")
                 }
-
             })
         }
     }
+    
     
     func getTweets (completion: @escaping tweetsCompletion) {
         if self.account != nil {
@@ -134,6 +135,14 @@ class API {
                 self.updateTimeLine(completion: completion)
             }
             completion(nil, "Sorry Charlie")
+        }
+    }
+    
+    
+    //NOT FINISHED YET:
+    func getCurrentUser (callback: @escaping userCompletion) {
+        if self.account != nil {
+            let userProfile = Profile(json: [String : Any])
         }
     }
 }

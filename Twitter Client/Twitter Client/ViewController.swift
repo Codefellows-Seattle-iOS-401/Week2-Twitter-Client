@@ -12,6 +12,13 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBAction func profileButton(_ sender: AnyObject) {
+        
+    }
+    
+    
+    @IBOutlet weak var UIActivityIndicator: UIActivityIndicatorView!
+    
     // This is an array that contains only class Tweet types
     var allTweets = [Tweet]() {
         didSet {
@@ -38,7 +45,43 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated)
     
         update()
+        
+    
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        if segue.identifier == "showDetailSegue" {
+            let selectedIndex = tableView.indexPathForSelectedRow!.row
+            let selectedTweet = self.allTweets[selectedIndex]
+            
+            //if this seque is going to the DetailViewController then select a tweet
+            if let destinationViewController = segue.destination as? DetailViewController {
+                destinationViewController.tweet = selectedTweet
+            }
+        }
+
+    }
+    
+    class destinationViewController: DetailViewController {
+        
+    }
+    
+    
+//    override func prepare(for segue: <#T##UIStoryboardSegue#>, sender: Any?) {
+//        super.prepare(for: segue, sender: sender)
+//        
+//        if segue.identifier == "showDetailDeque" {
+//            let selectedIndex = tableView.indexPathForSelectedRow!.row
+//            let selectedTweet = self.allTweets[selectedIndex]
+//            
+//            if let destinationViewController = segue.destination as DetailViewController {
+//                destinationViewController.tweet = selectedTweet
+//            }
+//        }
+//    }
+    
     
     // everything in curly braces after getTweets is supposed to be the parameters of getTweets. Because getTweets was originally coded to take in a parameter of a function that has the signature of ([Tweet]?, String?) -> () then there has to be at least two placeholders in this closure to represent that signature even though those placeholders don't explicitly have value yet, and even though we're not using one of them.
     
@@ -46,11 +89,16 @@ class ViewController: UIViewController {
     
     
     func update() {
+        
+        UIActivityIndicator.startAnimating()
+        
         API.shared.getTweets { (tweets, error) in
             if tweets != nil {
                 OperationQueue.main.addOperation { () in
                     self.allTweets = tweets!
+                    self.UIActivityIndicator.stopAnimating()
                     self.tableView.reloadData()
+                    
                 }
             }
         }

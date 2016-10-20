@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		503B0E971DB69E8800E960B1 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503B0E961DB69E8800E960B1 /* API.swift */; };
 		507546F31DB7F43F00AC5DD3 /* TweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507546F21DB7F43F00AC5DD3 /* TweetTableViewCell.swift */; };
+		507546F71DB8045700AC5DD3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507546F61DB8045700AC5DD3 /* DetailViewController.swift */; };
+		507546F91DB833BC00AC5DD3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507546F81DB833BC00AC5DD3 /* ProfileViewController.swift */; };
+		507546FB1DB84B5700AC5DD3 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507546FA1DB84B5700AC5DD3 /* Profile.swift */; };
 		509FBC5A1DB532A5008234EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509FBC591DB532A5008234EE /* AppDelegate.swift */; };
 		509FBC5C1DB532A5008234EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509FBC5B1DB532A5008234EE /* ViewController.swift */; };
 		509FBC5F1DB532A5008234EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 509FBC5D1DB532A5008234EE /* Main.storyboard */; };
@@ -23,6 +26,9 @@
 /* Begin PBXFileReference section */
 		503B0E961DB69E8800E960B1 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		507546F21DB7F43F00AC5DD3 /* TweetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetTableViewCell.swift; sourceTree = "<group>"; };
+		507546F61DB8045700AC5DD3 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		507546F81DB833BC00AC5DD3 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		507546FA1DB84B5700AC5DD3 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		509FBC561DB532A5008234EE /* Twitter Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Twitter Client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		509FBC591DB532A5008234EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		509FBC5B1DB532A5008234EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -50,6 +56,8 @@
 		501B5BC81DB58FBF0050EEA1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				507546F81DB833BC00AC5DD3 /* ProfileViewController.swift */,
+				507546F61DB8045700AC5DD3 /* DetailViewController.swift */,
 				507546F21DB7F43F00AC5DD3 /* TweetTableViewCell.swift */,
 				509FBC5B1DB532A5008234EE /* ViewController.swift */,
 			);
@@ -94,6 +102,7 @@
 				509FBC6D1DB543D1008234EE /* User.swift */,
 				509FBC6F1DB543DF008234EE /* Tweet.swift */,
 				509FBC721DB54F95008234EE /* JSONParser.swift */,
+				507546FA1DB84B5700AC5DD3 /* Profile.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -172,12 +181,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				509FBC5C1DB532A5008234EE /* ViewController.swift in Sources */,
+				507546FB1DB84B5700AC5DD3 /* Profile.swift in Sources */,
 				509FBC731DB54F95008234EE /* JSONParser.swift in Sources */,
 				509FBC5A1DB532A5008234EE /* AppDelegate.swift in Sources */,
 				509FBC6E1DB543D1008234EE /* User.swift in Sources */,
 				503B0E971DB69E8800E960B1 /* API.swift in Sources */,
 				509FBC701DB543DF008234EE /* Tweet.swift in Sources */,
+				507546F91DB833BC00AC5DD3 /* ProfileViewController.swift in Sources */,
 				507546F31DB7F43F00AC5DD3 /* TweetTableViewCell.swift in Sources */,
+				507546F71DB8045700AC5DD3 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
