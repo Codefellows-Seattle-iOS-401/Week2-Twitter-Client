@@ -14,6 +14,7 @@ import Social
 
 typealias accountCompletion = (ACAccount?, String?) -> ()
 typealias userCompletion = (User?, String?) -> ()
+typealias profileCompletion = (Profile?, String?) -> ()
 typealias tweetsCompletion = ([Tweet]?, String?) -> ()
 
 
@@ -46,7 +47,7 @@ class API {
         
     }
     
-    private func getOAuthUser (completion: @escaping userCompletion) {
+    private func getOAuthUser (completion: @escaping profileCompletion) {
         let url = URL(string: "https://api.twitter.com/1.1/account/verify_credentials.json")
         
         if let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: SLRequestMethod.GET, url: url, parameters: nil) {
@@ -66,7 +67,8 @@ class API {
                 case 200...299:
                     do {
                         if let userJSON = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? [String: Any] {
-                            completion(User(json: userJSON), "Sorry Charlie")
+//                            completion(User(json: userJSON), "Sorry Charlie")
+                            completion(Profile(json: userJSON), "Error")
                         }
                     } catch {
                         print("Error cannot serialize data")
@@ -139,10 +141,9 @@ class API {
     }
     
     
-    //NOT FINISHED YET:
-//    func getCurrentUser (callback: @escaping userCompletion) {
-//        if self.account != nil {
-//            let userProfile = Profile(json: [String : Any])
-//        }
-//    }
+    func getCurrentUser (callback: @escaping profileCompletion) {
+        if self.account != nil {
+            self.getOAuthUser(completion: callback)
+        }
+    }
 }

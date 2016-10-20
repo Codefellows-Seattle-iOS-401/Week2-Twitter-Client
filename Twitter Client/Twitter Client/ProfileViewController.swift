@@ -14,13 +14,22 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var userLocation: UILabel!
     
+    var currentProfile: Profile?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Sending a call to the server so need to add to Que
+        API.shared.getCurrentUser { (currentProfile, error) in
+            self.currentProfile = currentProfile
+            OperationQueue.main.addOperation {
+                self.userLocation.text = self.currentProfile?.location
+            }
+        }
+        
         userName.text = API.shared.account?.username
         
-//        userLocation.text = API.shared.account?
     }
 
     @IBAction func exitButton(_ sender: AnyObject) {
