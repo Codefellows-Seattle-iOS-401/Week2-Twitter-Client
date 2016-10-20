@@ -22,7 +22,8 @@ class ViewController: UIViewController {
         //switching between users via action sheet
             // Create action Sheet
             let actionSheetController: UIAlertController = UIAlertController(
-                title: API.shared.accountList?.first as! String?,
+                title: "first username",
+                //API.shared.accountList?.first as! String?,
                 message: nil,
                 preferredStyle: .actionSheet)
             
@@ -32,62 +33,49 @@ class ViewController: UIViewController {
             { action -> Void in
                 // Do nothing here
             }
-            
+        
+            let addAccount: UIAlertAction = UIAlertAction(title: API.shared.accountList?.first as! String?,
+                                                     style: .default)
+        
             actionSheetController.addAction(cancelAction)
+            actionSheetController.addAction(addAccount)
             // Loop over accounts
-            for account in API.shared.accountList! {
-                let aCAccount: ACAccount = account as! ACAccount
-                var accountIdentifier = ""
-                if aCAccount == API.shared.anAccount {
-                    accountIdentifier = "✅ "
-                }
-                // in the block of the action tell it to change the API account & update the feed
-                let selectAccounts: UIAlertAction = UIAlertAction(
-                    title: accountIdentifier + "@" + aCAccount.username,
-                    style: .default)
-                { action -> Void in
-                    API.shared.anAccount = aCAccount
-                    self.updateFor(account: account as? ACAccount)
-                }
-                // add action to sheet for each account
-                actionSheetController.addAction(selectAccounts)
-            }
+//            for account in API.shared.accountList! {
+//                let aCAccount: ACAccount = account as! ACAccount
+//                var accountIdentifier = ""
+//                if aCAccount === API.shared.account {
+//                    accountIdentifier = "✅ "
+//                }
+//                // in the block of the action tell it to change the API account & update the feed
+//                let selectAccounts: UIAlertAction = UIAlertAction(
+//                    title: accountIdentifier + "@" + aCAccount.username,
+//                    style: .default)
+//                { action -> Void in
+//                    API.shared.account = aCAccount
+//                    self.updateFor(account: account as? ACAccount)
+//                }
+//                // add action to sheet for each account
+//            }
             //Present the AlertController
             self.present(actionSheetController, animated: true)
         }
     
     
     
-//        let alertController = UIAlertController(title: nil, message: "Switch accounts", preferredStyle: .actionSheet)
-//        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
-//            //
-//        }
-//        alertController.addAction(cancelAction)
-//        
-//        let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
-//            //
-//        }
-//        alertController.addAction(OKAction)
-//        
-//        let destroyAction = UIAlertAction(title: "Destroy", style: .destructive) { (action) in
-//            print(action)
-//        }
-//        alertController.addAction(destroyAction)
-//        
-//        self.present(alertController, animated: true) {
-//            //
-//        }
     
     
     //computed properties
     var allTweets = [Tweet]() {
         didSet { // didSet is a property observer, will fire off once complete
             tableView.reloadData()
+            print("reloaded data")
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("viewDidLoad begins")
         
         //set up tableView height
         self.tableView.estimatedRowHeight = 75
@@ -99,22 +87,25 @@ class ViewController: UIViewController {
         
         //setup layout of tableView
         self.tableView.backgroundColor = UIColor.purple
-        self.tableView.rowHeight = 100
+        //self.tableView.rowHeight = 100
         self.tableView.separatorColor = UIColor.green
         //self.tableView.widthAnchor.
         self.view.backgroundColor = UIColor.white
         
-        
-        if let account = API.shared.accountList?.first {
-            updateFor(account: account as? ACAccount)
-            API.shared.getTweetsForAccount(account: account as? ACAccount) { (tweets) in
+        print(API.shared.accountList?.first)
+        if let account = API.shared.accountList?.first as? ACAccount {
+            print(account)
+            updateFor(account: account)
+            API.shared.getTweetsForAccount(account: account) { (tweets) in
                 OperationQueue.main.addOperation {
                     if tweets != nil {
+                        print(114)
                         self.allTweets = tweets!
                     }
                 }
             }
         }
+        print("viewDidLoad ends")
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -140,6 +131,7 @@ class ViewController: UIViewController {
         
         API.shared.getTweetsForAccount(account: account) { (tweets) in
             if tweets != nil {
+                print(143)
                 //concurrency
                 OperationQueue.main.addOperation { // taking assignment operation into the main queue
                     self.allTweets = tweets!
@@ -178,9 +170,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         cell.tweetLabelCell.textColor = UIColor.white
         cell.tweetLabelCell.backgroundColor = UIColor.clear
         
-        cell.detailTextLabel?.text = currentTweet.user?.name //subtitle input text
-        cell.detailTextLabel?.textColor = UIColor.lightGray
-        cell.detailTextLabel?.backgroundColor = UIColor.clear
+//        cell.detailTextLabel?.text = currentTweet.user?.name //subtitle input text
+//        cell.detailTextLabel?.textColor = UIColor.lightGray
+//        cell.detailTextLabel?.backgroundColor = UIColor.clear
         
         return cell
     }
@@ -192,3 +184,30 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+
+
+
+
+
+
+
+
+//        let alertController = UIAlertController(title: nil, message: "Switch accounts", preferredStyle: .actionSheet)
+//        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+//            //
+//        }
+//        alertController.addAction(cancelAction)
+//
+//        let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
+//            //
+//        }
+//        alertController.addAction(OKAction)
+//
+//        let destroyAction = UIAlertAction(title: "Destroy", style: .destructive) { (action) in
+//            print(action)
+//        }
+//        alertController.addAction(destroyAction)
+//
+//        self.present(alertController, animated: true) {
+//            //
+//        }

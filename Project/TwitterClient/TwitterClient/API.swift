@@ -21,9 +21,9 @@ class API {
     static let shared = API()
     
     //global vars
-    var anAccount: ACAccount?
+    var account: ACAccount?
     //create array for twitter accounts
-    var accountList: [Any]?
+    var accountList: [Any]? = nil
     
     //private funcs
     private func login(completion: @escaping accountCompletion) {
@@ -41,9 +41,9 @@ class API {
             if success {
                 self.accountList = accountStore.accounts(with: accountType!)
                 
-                if let anAccount = self.accountList?.first as? [ACAccount] {
-                    completion(anAccount)
-                    dispatchMain()
+                if let account = self.accountList?.first as? [ACAccount] {
+                    completion(account)
+                    //dispatchMain()
                 }
             } else {
                 print("UNSUCCESSFUL: because no twitter accounts logged in on the device")
@@ -61,7 +61,7 @@ class API {
                                    requestMethod: .GET,
                                    url: url,
                                    parameters: nil) {
-            request.account = self.anAccount
+            request.account = self.account
             
             request.perform(handler: { (data, response, error) in
                 if error != nil {
@@ -103,7 +103,7 @@ class API {
                                    requestMethod: .GET,
                                    url: url,
                                    parameters: nil) {
-            request.account = account
+            request.account = self.account //self.account or account
             
             request.perform(handler: { (data, response, error) in
                 if error != nil {
@@ -137,10 +137,10 @@ class API {
     
     //accessor method for tweets
     func getTweetsForAccount(account: ACAccount?, completion: @escaping tweetsCompletion) {
-        if account != nil && self.accountList != nil {
+        if self.account != nil && self.accountList != nil { //self.account or account
             self.updateTimelineFor(account: account!, completion: completion)
         }
-        self.login { (anAccount) in
+        self.login { (account) in
             if self.accountList != nil {
                 API.shared.accountList = self.accountList
                 self.updateTimelineFor(account: self.accountList!.first! as! ACAccount, completion: completion)
