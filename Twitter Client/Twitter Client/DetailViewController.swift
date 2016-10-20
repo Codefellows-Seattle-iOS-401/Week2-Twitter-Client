@@ -16,11 +16,14 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var tweetText: UILabel!
 
+    @IBOutlet weak var profilePic: UIImageView!
    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
+        
+
         userLabel.text = tweet.user?.name
         tweetText.text = tweet.text
         
@@ -30,5 +33,6 @@ class DetailViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    
 }

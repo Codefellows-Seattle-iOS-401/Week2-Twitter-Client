@@ -34,6 +34,9 @@ class ViewController: UIViewController {
         self.tableView.dataSource = self
         self.tableView.delegate = self
         
+        let nib = UINib(nibName: "TweetCell", bundle: Bundle.main)
+        self.tableView.register(nib, forCellReuseIdentifier: TweetTableViewCell.identifier())
+        
         self.tableView.estimatedRowHeight = 75
         self.tableView.rowHeight = UITableViewAutomaticDimension
         
@@ -52,7 +55,7 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         
-        if segue.identifier == "showDetailSegue" {
+        if segue.identifier == "DetailViewControllerSegue" {
             let selectedIndex = tableView.indexPathForSelectedRow!.row
             let selectedTweet = self.allTweets[selectedIndex]
             
@@ -119,21 +122,21 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TweetCell", for: indexPath) as? TweetTableViewCell
-        
-        
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
-    }
+        let cell = tableView.dequeueReusableCell(withIdentifier: TweetTableViewCell.identifier(), for: indexPath) as? TweetTableViewCell
     
     let currentTweet = self.allTweets[indexPath.row]
-        
-        
-    cell?.tweetText.text = currentTweet.text
-    
+    cell?.tweet = currentTweet
         
     return cell!
         
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "DetailViewControllerSegue", sender: nil)
+        
+        print(indexPath.row)
+    }
+
+    
+    
 }

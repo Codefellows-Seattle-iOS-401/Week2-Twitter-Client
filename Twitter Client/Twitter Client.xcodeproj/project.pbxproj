@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		503B0E971DB69E8800E960B1 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503B0E961DB69E8800E960B1 /* API.swift */; };
+		5060437F1DB95D5E00A81AD8 /* SimpleCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5060437E1DB95D5E00A81AD8 /* SimpleCache.swift */; };
+		506043811DB9663B00A81AD8 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506043801DB9663B00A81AD8 /* UIExtensions.swift */; };
+		506043851DB9681200A81AD8 /* TweetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 506043841DB9681200A81AD8 /* TweetCell.xib */; };
 		507546F31DB7F43F00AC5DD3 /* TweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507546F21DB7F43F00AC5DD3 /* TweetTableViewCell.swift */; };
 		507546F71DB8045700AC5DD3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507546F61DB8045700AC5DD3 /* DetailViewController.swift */; };
 		507546F91DB833BC00AC5DD3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507546F81DB833BC00AC5DD3 /* ProfileViewController.swift */; };
@@ -25,6 +28,9 @@
 
 /* Begin PBXFileReference section */
 		503B0E961DB69E8800E960B1 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		5060437E1DB95D5E00A81AD8 /* SimpleCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCache.swift; sourceTree = "<group>"; };
+		506043801DB9663B00A81AD8 /* UIExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
+		506043841DB9681200A81AD8 /* TweetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweetCell.xib; sourceTree = "<group>"; };
 		507546F21DB7F43F00AC5DD3 /* TweetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetTableViewCell.swift; sourceTree = "<group>"; };
 		507546F61DB8045700AC5DD3 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		507546F81DB833BC00AC5DD3 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +73,7 @@
 		509FBC4D1DB532A5008234EE = {
 			isa = PBXGroup;
 			children = (
+				506043841DB9681200A81AD8 /* TweetCell.xib */,
 				509FBC581DB532A5008234EE /* Twitter Client */,
 				509FBC571DB532A5008234EE /* Products */,
 			);
@@ -87,6 +94,7 @@
 				509FBC711DB54431008234EE /* Model */,
 				509FBC591DB532A5008234EE /* AppDelegate.swift */,
 				503B0E961DB69E8800E960B1 /* API.swift */,
+				506043801DB9663B00A81AD8 /* UIExtensions.swift */,
 				501B5BC81DB58FBF0050EEA1 /* View */,
 				509FBC5D1DB532A5008234EE /* Main.storyboard */,
 				509FBC601DB532A5008234EE /* Assets.xcassets */,
@@ -103,6 +111,7 @@
 				509FBC6F1DB543DF008234EE /* Tweet.swift */,
 				509FBC721DB54F95008234EE /* JSONParser.swift */,
 				507546FA1DB84B5700AC5DD3 /* Profile.swift */,
+				5060437E1DB95D5E00A81AD8 /* SimpleCache.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -167,6 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				509FBC641DB532A5008234EE /* LaunchScreen.storyboard in Resources */,
+				506043851DB9681200A81AD8 /* TweetCell.xib in Resources */,
 				509FBC611DB532A5008234EE /* Assets.xcassets in Resources */,
 				509FBC5F1DB532A5008234EE /* Main.storyboard in Resources */,
 				509FBC6C1DB5436E008234EE /* Tweet.json in Resources */,
@@ -183,7 +193,9 @@
 				509FBC5C1DB532A5008234EE /* ViewController.swift in Sources */,
 				507546FB1DB84B5700AC5DD3 /* Profile.swift in Sources */,
 				509FBC731DB54F95008234EE /* JSONParser.swift in Sources */,
+				506043811DB9663B00A81AD8 /* UIExtensions.swift in Sources */,
 				509FBC5A1DB532A5008234EE /* AppDelegate.swift in Sources */,
+				5060437F1DB95D5E00A81AD8 /* SimpleCache.swift in Sources */,
 				509FBC6E1DB543D1008234EE /* User.swift in Sources */,
 				503B0E971DB69E8800E960B1 /* API.swift in Sources */,
 				509FBC701DB543DF008234EE /* Tweet.swift in Sources */,

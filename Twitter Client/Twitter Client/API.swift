@@ -16,6 +16,7 @@ typealias accountCompletion = (ACAccount?, String?) -> ()
 typealias userCompletion = (User?, String?) -> ()
 typealias profileCompletion = (Profile?, String?) -> ()
 typealias tweetsCompletion = ([Tweet]?, String?) -> ()
+typealias imageCompletion = (UIImage?) -> ()
 
 
 class API {
@@ -86,13 +87,13 @@ class API {
     }
     
     
-    private func updateTimeLine (completion: @escaping tweetsCompletion) {
-        let url = URL(string: "https://api.twitter.com/1.1/statuses/home_timeline.json")
+    private func updateTimeLine (url: String, completion: @escaping tweetsCompletion) {
+//        let url = URL(string: "https://api.twitter.com/1.1/statuses/home_timeline.json")
         
         if let request = SLRequest(
             forServiceType: SLServiceTypeTwitter,
             requestMethod: .GET,
-            url: url,
+            url: URL(string: url),
             parameters: nil) {
         
             request.account = self.account
@@ -128,15 +129,45 @@ class API {
     
     func getTweets (completion: @escaping tweetsCompletion) {
         if self.account != nil {
-            self.updateTimeLine(completion: completion)
-        }
+            self.updateTimeLine(url: "https://api.twitter.com/1.1/statuses/home_timeline.json", completion: completion)
+        } else {
+        
         
         self.login { (account, error) in
             if account != nil {
                 self.account = account!
-                self.updateTimeLine(completion: completion)
+                self.updateTimeLine(url: "https://api.twitter.com/1.1/statuses/home_timeline.json", completion: completion)
             }
             completion(nil, "Sorry Charlie")
+            }
+        }
+    }
+    
+    func getUserTweetsFor(username: String, completion: @escaping tweetsCompletion) {
+        self.updateTimeLine(url: "https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=\(username)", completion: completion)
+        }
+    
+    func getImageFor (urlString: String, completion: @escaping imageCompletion) {
+        OperationQueue().addOperation {
+            guard let url = URL(string: urlString) else { return }
+            
+            print(url)
+            
+            do {
+                let data = try Data(contentsOf: url)
+                guard let image = UIImage(data: data) else { return }
+                
+                OperationQueue.main.addOperation {
+                    completion(image)
+                }
+            } catch {
+                print("There was an error getting the data from the url from the UIImage.")
+                OperationQueue.main.addOperation {
+                    completion(nil)
+                }
+                
+            }
+            
         }
     }
     
