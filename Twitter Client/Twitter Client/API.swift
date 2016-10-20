@@ -140,9 +140,9 @@ class API {
     
     
     //NOT FINISHED YET:
-    func getCurrentUser (callback: @escaping userCompletion) {
-        if self.account != nil {
-            let userProfile = Profile(json: [String : Any])
-        }
-    }
+//    func getCurrentUser (callback: @escaping userCompletion) {
+//        if self.account != nil {
+//            let userProfile = Profile(json: [String : Any])
+//        }
+//    }
 }
